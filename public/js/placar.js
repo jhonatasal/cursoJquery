@@ -71,7 +71,15 @@ function sincronizaPlacar() {
     }
     $.post("http://localhost:3000/Placar", dados, function () {
         console.log("Salvou os dados no placar");
+        $(".tooltip").tooltipster("open");
+    }).fail(function () {
+        $(".tooltip").tooltipster("open").tooltipster("content", "Falha ao salvar os dados no BD");
     })
+        .always(function () {
+            setTimeout(function () {
+                $(".tooltip").tooltipster("close");
+            }, 1200)
+        })
 }
 
 function atualizaPlacar() {
