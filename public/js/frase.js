@@ -39,7 +39,6 @@ function buscaFrase() {
 
 function trocaFrase(data) {
     var frase = $(".frase");
-    var numeroAleatorio = Math.floor(Math.random() * data.length);
     frase.text(data.texto);
     atualizaTamanhoFrase();
     atualizaTempoInicial(data.tempo);
